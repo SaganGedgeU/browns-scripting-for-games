@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 using System.Globalization;
 
-[RequireComponent(typeof(TextMeshProUGUI)]
+[RequireComponent(typeof(TextMeshProUGUI))]
 
-public class SimpleTextMechProBehaviour : Monobehaviour
+public class SimpleTextMechProBehaviour : MonoBehaviour
 {
     private TextMeshProUGUI textObj;
     public SimpleIntData dataObj;
