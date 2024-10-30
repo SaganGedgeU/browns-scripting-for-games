@@ -6,20 +6,23 @@ using System.Globalization;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 
-public class SimpleTextMechProBehaviour : MonoBehaviour
+public class SimpleTextMeshProBehaviour : MonoBehaviour
 {
     private TextMeshProUGUI textObj;
     public SimpleIntData dataObj;
 
-    public void Start()
+    private void Start()
     {
         textObj = GetComponent<TextMeshProUGUI>();
-        UpdateWithIntData();
     }
 
+    public void Update()
+    {
+        UpdateWithIntData();
+    }
     public void UpdateWithIntData()
     {
-        textObj.text = dataObj.value.ToString(CultureInfo.InvariantCulture);
+        textObj.text = "Score: " + dataObj.value.ToString(CultureInfo.InvariantCulture);
     }
     
 }
