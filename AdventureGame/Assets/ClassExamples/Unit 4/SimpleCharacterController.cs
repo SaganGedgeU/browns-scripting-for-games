@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class SimpleCharacterController : MonoBehaviour
@@ -22,6 +22,10 @@ public class SimpleCharacterController : MonoBehaviour
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnXAxis();
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
     }
 
     private void MoveCharacter()
@@ -32,7 +36,7 @@ public class SimpleCharacterController : MonoBehaviour
         controller.Move(move);
 
         // Jumping
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }

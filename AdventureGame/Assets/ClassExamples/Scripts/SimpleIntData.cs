@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleIntData : MonoBehaviour
+[CreateAssetMenu(menuName = "SingleVariables/ SimpleIntData")]
+public class SimpleIntData : ScriptableObject
 {
     public int value;
-    
-    public void UpdateValue (int amount)
+    public void UpdateValue(int amount)
     {
-        value +=   amount;
+        value += amount;
     }
-    public void SetValue (int amount)
+    public void SetValue(int amount)
     {
         value = amount;
     }
-        
 }
